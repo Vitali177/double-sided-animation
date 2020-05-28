@@ -42,12 +42,12 @@
       background-color: #efb8cb;
     }
 
-    .left:hover, .right:hover {
+    .left.hover, .right.hover {
       background-color: #e91e63;
       transition: all .5s ease-in-out;
     }
 
-    .left:hover h2, .right:hover h2 {
+    .left.hover h2, .right.hover h2 {
       color: #ffffff;
       transition: all .5s ease-in-out;
     }
@@ -58,6 +58,7 @@
       margin-top: 5%;
       margin-left: 25%;
       font-size: 110px;
+      font-weight: 400;
       text-align: center;
       transition: margin .5s ease-in-out;
       color: #ffffff;
@@ -82,6 +83,9 @@
     left.addEventListener("mouseover", () => {
       description.classList.add("to-left");
       description.classList.remove("to-right");
+
+      left.classList.add("hover");
+      right.classList.remove("hover");
     });
 
     // left.addEventListener("mouseout", () => {
@@ -91,6 +95,9 @@
     right.addEventListener("mouseover", () => {
       description.classList.add("to-right");
       description.classList.remove("to-left");
+
+      right.classList.add("hover");
+      left.classList.remove("hover");
     });
 
     // right.addEventListener("mouseout", () => {
