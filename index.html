@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+  <title>Animation</title>
+</head>
+<body>
+  <div class="animation-wrapper">
+    <div class="left"><h2>Left</h2></div>
+    <div class="right"><h2>Right</h2></div>
+    <h1 class="description">Choose side</h1>
+  </div>
+</body>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat";
+      color: #efb8cb;
+      /* color: #8682e3; */
+    }
+
+    .animation-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    .animation-wrapper h2 {
+      font-size: 100px;
+    }
+
+    .left, .right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #efb8cb;
+    }
+
+    .left:hover, .right:hover {
+      background-color: #e91e63;
+      transition: all .5s ease-in-out;
+    }
+
+    .left:hover h2, .right:hover h2 {
+      color: #ffffff;
+      transition: all .5s ease-in-out;
+    }
+
+    .description {
+      position: absolute;
+      width: 50%;
+      margin-top: 5%;
+      margin-left: 25%;
+      font-size: 110px;
+      text-align: center;
+      transition: margin .5s ease-in-out;
+      color: #ffffff;
+    }
+
+    .to-left {
+      border: 0;
+      margin-left: 0%;      
+    }
+
+    .to-right {
+      border: 0;
+      margin-left: 50%;
+    }
+    
+  </style>
+  <script>
+    const left = document.querySelector(".left");
+    const right = document.querySelector(".right");
+    const description = document.querySelector(".description");
+
+    left.addEventListener("mouseover", () => {
+      description.classList.add("to-left");
+    });
+
+    left.addEventListener("mouseout", () => {
+      description.classList.remove("to-left");
+    });
+
+    right.addEventListener("mouseover", () => {
+      description.classList.add("to-right");
+    });
+
+    right.addEventListener("mouseout", () => {
+      description.classList.remove("to-right");
+    });
+  </script>
+</html>
