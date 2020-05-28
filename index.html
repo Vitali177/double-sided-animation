@@ -81,18 +81,20 @@
 
     left.addEventListener("mouseover", () => {
       description.classList.add("to-left");
+      description.classList.remove("to-right");
     });
 
-    left.addEventListener("mouseout", () => {
-      description.classList.remove("to-left");
-    });
+    // left.addEventListener("mouseout", () => {
+    //   description.classList.remove("to-left");
+    // });
 
     right.addEventListener("mouseover", () => {
       description.classList.add("to-right");
+      description.classList.remove("to-left");
     });
 
-    right.addEventListener("mouseout", () => {
-      description.classList.remove("to-right");
-    });
+    // right.addEventListener("mouseout", () => {
+    //   description.classList.remove("to-right");
+    // });
   </script>
 </html>
